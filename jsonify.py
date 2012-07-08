@@ -1,7 +1,13 @@
 import re
 
-# So hacky but very convenient for generating parts of tumblr.html
+""" So hacky but very convenient for generating parts of tumblr.html
+    Eventually I want to create a bona fide javascript object generator 
+    that takes a simple specification of the current tumblr theming capabilities as input.
 
+    Also, the state of testing tumblr themes is pretty miserable right now.
+    It's improved recently, but the cycle of tweaking and pressing the Update button repeatedly
+    is miserable. I should make a local theme-parsing script that will update the page with
+    filler content without ever needing to refresh."""
 
 def cap_lower(name):
     capname = name.capitalize()
