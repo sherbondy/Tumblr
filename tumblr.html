@@ -1,0 +1,381 @@
+<html>
+	<head>
+		<title>Magic Tricks</title>
+	</head>
+	<body>
+		<script id="tumblr">
+			var tumblr = {
+				title: {JSPlaintextTitle},
+				description: {JSPlaintextMetaDescription},
+				rss: {JSPlaintextRSS},
+				portrait_url: {
+					16: {JSPlaintextPortraitURL-16},
+				},
+
+				{block:Pagination}
+					pages: {
+						{block:PreviousPage}
+							previous: {JSPlaintextPreviousPage},
+						{/block:PreviousPage}
+						current: {CurrentPage}
+						total: {TotalPages}
+						{block:NextPage}
+							next: {JSPlaintextNextPage},
+						{/block:NextPage}
+					},
+				{/block:Pagination}
+
+				{block:HasPages}
+					pages: [
+						{block:Pages}
+							{
+								label: {JSPlaintextLabel},
+								url: {JSPlaintextURL},
+							},
+						{/block:Pages}
+					],
+				{/block:HasPages}
+
+				posts: [
+					{block:Posts}
+					{
+						type: {JSPlaintextPostType},
+						permalink: {JSPlaintextPermalink},
+						short_url: {JSPlaintextShortURL},
+						post_id: {JSPlaintextPostID},
+						notes: {JSPlaintextPostNotesURL},
+						{block:RebloggedFrom}
+							reblogged: {
+								parent: {
+									name: {JSPlaintextReblogParentName},
+									title: {JSPlaintextReblogParentTitle},
+									url: {JSPlaintextReblogParentURL},
+									portrait_url: {
+							      16: {JSPlaintextReblogParentPortraitURL-16},
+							      24: {JSPlaintextReblogParentPortraitURL-24},
+							      30: {JSPlaintextReblogParentPortraitURL-30},
+							      40: {JSPlaintextReblogParentPortraitURL-40},
+							      48: {JSPlaintextReblogParentPortraitURL-48},
+							      64: {JSPlaintextReblogParentPortraitURL-64},
+							      96: {JSPlaintextReblogParentPortraitURL-96},
+							      128: {JSPlaintextReblogParentPortraitURL-128},
+									},
+								},
+								root: {
+								  name: {JSPlaintextReblogRootName},
+								  title: {JSPlaintextReblogRootTitle},
+								  url: {JSPlaintextReblogRootURL},
+							    portrait_url: {
+							      16: {JSPlaintextReblogRootPortraitURL-16},
+							      24: {JSPlaintextReblogRootPortraitURL-24},
+							      30: {JSPlaintextReblogRootPortraitURL-30},
+							      40: {JSPlaintextReblogRootPortraitURL-40},
+							      48: {JSPlaintextReblogRootPortraitURL-48},
+							      64: {JSPlaintextReblogRootPortraitURL-64},
+							      96: {JSPlaintextReblogRootPortraitURL-96},
+							      128: {JSPlaintextReblogRootPortraitURL-128},
+							    },
+								},
+							},
+						{/block:RebloggedFrom}
+
+						{block:Text}
+							{block:Title}
+								title: {JSPlaintextTitle},
+							{/block:Title}
+						{/block:Text}
+
+						{block:Photo}
+							alt: {JSPlaintextPhotoAlt},
+							{block:Caption}
+								caption: {JSPlaintextCaption},
+							{/block:Caption}
+							link_url: {JSPlaintextLinkURL},
+							url: {
+					      500: {JSPlaintextPhotoURL-500},
+					      400: {JSPlaintextPhotoURL-400},
+					      250: {JSPlaintextPhotoURL-250},
+					      100: {JSPlaintextPhotoURL-100},
+					      75: {JSPlaintextPhotoURL-75},
+								{block:HighRes}
+									high_res: {JSPlaintextPhotoURL-HighRes},
+								{/block:HighRes}
+							},
+							{block:Exif}
+								exif: {
+									{block:Camera}
+										camera: {JSPlaintextCamera},
+									{/block:Camera}
+									{block:Aperture}
+										aperture: {JSPlaintextAperture},
+									{/block:Aperture}
+									{block:Exposure}
+										exposure: {JSPlaintextExposure},
+									{/block:Exposure}
+									{block:FocalLength}
+										focal_length: {JSPlaintextFocalLength},
+									{/block:FocalLength}
+								},
+							{/block:Exif}
+						{/block:Photo}
+
+						{block:Quote}
+							quote: {JSPlaintextQuote},
+							{block:Source}
+								source: {JSPlaintextSource},
+							{/block:Source}
+							length: {JSPlaintextLength},
+						{/block:Quote}
+
+						{block:Link}
+						  url: {JSPlaintextUrl},
+						  name: {JSPlaintextName},
+						  target: {JSPlaintextTarget},
+						  {block:Description}
+						    description: {JSPlaintextDescription},
+						  {/block:Description}
+						{/block:Link}
+
+						{block:Chat}
+						  {block:Title}
+						    title: {JSPlaintextTitle},
+						  {/block:Title}
+						  lines: [
+							  {block:Lines}
+							  	{
+									  name: {JSPlaintextName},
+									  user_number: {UserNumber},
+									  {block:Label}
+									    label: {JSPlaintextLabel},
+									  {/block:Label}
+									},
+								{/block:Lines}
+						  ],
+						{/block:Chat}
+
+						{block:Audio}
+						  {block:TrackName}
+						    track_name: {JSPlaintextTrackName},
+						  {/block:TrackName}
+						  {block:Artist}
+						    artist: {JSPlaintextArtist},
+						  {/block:Artist}
+						  {block:Caption}
+						    caption: {JSPlaintextCaption},
+						  {/block:Caption}
+						  {block:AlbumArt}
+						    album_art_url: {JSPlaintextAlbumArtURL},
+						  {/block:AlbumArt}
+						  {block:AudioEmbed}
+						    audio_embed: {
+						      250: {JSPlaintextAudioEmbed-250},
+						      400: {JSPlaintextAudioEmbed-400},
+						      500: {JSPlaintextAudioEmbed-500},
+						      640: {JSPlaintextAudioEmbed-640},
+						    }
+						  {/block:AudioEmbed}
+						  {block:PlayCount}
+						    play_count: {PlayCount},
+						  {/block:PlayCount}
+						  {block:ExternalAudio}
+						    external_audio_url: {JSPlaintextExternalAudioURL},
+						  {/block:ExternalAudio}
+						{/block:Audio}
+
+						{block:Video}
+						  play_count: {PlayCount},
+						  formatted_play_count: {JSPlaintextFormattedPlayCount},
+						  play_count_with_label: {JSPlaintextPlayCountWithLabel},
+						  {block:Caption}
+						    caption: {JSPlaintextCaption},
+						  {/block:Caption}
+						  {block:Video}
+						    video: {
+						      500: {JSPlaintextVideo-500},
+						      400: {JSPlaintextVideo-400},
+						      250: {JSPlaintextVideo-250},
+						    }
+						  {/block:Video}
+						{/block:Video}
+
+						{block:Answer}
+						  question: {JSPlaintextQuestion},
+						  answer: {JSPlaintextAnswer},
+						  asker: {
+						  	name: {JSPlaintextAsker},
+						    portrait_url: {
+						      16: {JSPlaintextAskerPortraitURL-16},
+						      24: {JSPlaintextAskerPortraitURL-24},
+						      30: {JSPlaintextAskerPortraitURL-30},
+						      40: {JSPlaintextAskerPortraitURL-40},
+						      48: {JSPlaintextAskerPortraitURL-48},
+						      64: {JSPlaintextAskerPortraitURL-64},
+						      96: {JSPlaintextAskerPortraitURL-96},
+						      128: {JSPlaintextAskerPortraitURL-128},
+						    },
+						  },
+						{/block:Answer}
+						{block:Date}
+							date: {
+								timestamp: {Timestamp},
+								month: {
+									name: {JSPlaintextMonth},
+									short: {JSPlaintextShortMonth},
+									number: {MonthNumber},
+								},
+								day: {
+									of_week: {
+										name: {JSPlaintextDayOfWeek},
+										short: {JSPlaintextShortDayOfWeek},
+										number: {DayOfWeekNumber},
+									},
+									of_month: {
+										number: {DayOfMonth},
+										with_zero: {JSPlaintextDayOfMonthWithZero},
+										suffix: {JSPlaintextDayOfMonthSuffix},
+									},
+								},
+								time: {
+									am_pm: {JSPlaintextAmPm},
+									12: {12Hour},
+									24: {24Hour},
+									minutes: {Minutes},
+									seconds: {Seconds},
+									beats: {Beats},
+									ago: {JSPlaintextTimeAgo},
+								},
+							},
+						{/block:Date}
+
+						{block:Notecount}
+						  note_count: {NoteCount},
+						  note_count_with_label: {JSPlaintextNoteCountWithLabel},
+						{/block:Notecount}
+
+						{block:HasTags}
+							tags: [
+								{block:Tags}
+									{
+									  tag: {JSPlaintextTag},
+									  url_safe_tag: {JSPlaintextURLSafeTag},
+									  tag_url: {JSPlaintextTagURL},
+									  tag_url_chrono: {JSPlaintextTagURLChrono},
+									},
+								{/block:Tags}
+							]
+						{/block:HasTags}
+
+						{block:ContentSource}
+							source: {
+							  url: {JSPlaintextSourceURL},
+							  title: {JSPlaintextSourceTitle},
+							  {block:SourceLogo}
+							  logo: {
+								  black_url: {JSPlaintextBlackLogoURL},
+								  width: {JSPlaintextLogoWidth},
+								  height: {JSPlaintextLogoHeight},
+								},
+								{/block:SourceLogo}
+							}
+						{/block:ContentSource}
+
+						post_author: {
+							name: {JSPlaintextPostAuthorName},
+							title: {JSPlaintextPostAuthorTitle},
+							url: {JSPlaintextPostAuthorURL},
+							portrait_url: {
+								16: {JSPlaintextPostAuthorPortraitURL-16},
+					      24: {JSPlaintextPostAuthorPortraitURL-24},
+					      30: {JSPlaintextPostAuthorPortraitURL-30},
+					      40: {JSPlaintextPostAuthorPortraitURL-40},
+					      48: {JSPlaintextPostAuthorPortraitURL-48},
+					      64: {JSPlaintextPostAuthorPortraitURL-64},
+					      96: {JSPlaintextPostAuthorPortraitURL-96},
+					      128: {JSPlaintextPostAuthorPortraitURL-128},
+							},
+						},
+					}
+					{/block:Posts}
+				],
+
+				{block:GroupMembers}
+					group_members: [
+						{block:GroupMember}
+							{
+							  url: {JSPlaintextGroupMemberURL},
+						    portrait_url: {
+						      16: {JSPlaintextGroupMemberPortraitURL-16},
+						      24: {JSPlaintextGroupMemberPortraitURL-24},
+						      30: {JSPlaintextGroupMemberPortraitURL-30},
+						      40: {JSPlaintextGroupMemberPortraitURL-40},
+						      48: {JSPlaintextGroupMemberPortraitURL-48},
+						      64: {JSPlaintextGroupMemberPortraitURL-64},
+						      96: {JSPlaintextGroupMemberPortraitURL-96},
+						      128: {JSPlaintextGroupMemberPortraitURL-128},
+						    },
+						    name: {JSPlaintextGroupMemberName},
+						    title: {JSPlaintextGroupMemberTitle},
+						  }
+						{/block:GroupMember}
+					],
+				{/block:GroupMembers}
+
+				{block:DayPage}
+					day_page: {
+						{block:NextDayPage}
+						  next_day_page: {JSPlaintextNextDayPage},
+						{/block:NextDayPage}
+						{block:PreviousDayPage}
+						  previous_day_page: {JSPlaintextPreviousDayPage},
+						{/block:PreviousDayPage}
+					},
+				{/block:DayPage}
+
+				{block:TagPage}
+					tag: {
+						name: {JSPlaintextTag},
+						url_safe_name: {JSPlaintextURLSafeTag},
+						url: {JSPlaintextTagURL},
+						url_chrono: {JSPlaintextTagURLChrono},
+					},
+				{/block:TagPage}
+
+				{block:SearchPage}
+					search: {
+						query: {JSPlaintextSearchQuery},
+						url_safe_query: {JSPlaintextURLSafeSearchQuery},
+						result_count: {SearchResultCount},
+					},
+				{/block:SearchPage}
+
+				{block:Following}
+					following: [
+						{block:Followed}
+						  name: {JSPlaintextFollowedName},
+						  title: {JSPlaintextFollowedTitle},
+						  url: {JSPlaintextFollowedURL},
+					    portrait_url: {
+					      16: {JSPlaintextFollowedPortraitURL-16},
+					      24: {JSPlaintextFollowedPortraitURL-24},
+					      30: {JSPlaintextFollowedPortraitURL-30},
+					      40: {JSPlaintextFollowedPortraitURL-40},
+					      48: {JSPlaintextFollowedPortraitURL-48},
+					      64: {JSPlaintextFollowedPortraitURL-64},
+					      96: {JSPlaintextFollowedPortraitURL-96},
+					      128: {JSPlaintextFollowedPortraitURL-128},
+					    },
+						{/block:Followed}
+					],
+				{/block:Following}
+
+				{block:Likes}
+					likes: {Likes},
+				{/block:Likes}
+
+				{block:Twitter}
+					twitter: {JSPlaintextTwitterUsername},
+				{/block:Twitter}
+			};
+		</script>
+	</body>
+</html>
