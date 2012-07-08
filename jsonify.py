@@ -1,5 +1,7 @@
 import re
 
+# So hacky but very convenient for generating parts of tumblr.html
+
 
 def cap_lower(name):
     capname = name.capitalize()
