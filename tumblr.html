@@ -3,22 +3,41 @@
 		<title>Magic Tricks</title>
 	</head>
 	<body>
+		<ol id="music">
+			{block:Posts}
+				{block:Audio}
+					<li id="audio">
+						{block:AudioPlayer}
+							{AudioPlayer}
+						{/block:AudioPlayer}
+					</li>
+				{/block:Audio}
+			{/block:Posts}
+		</ol>
+		
 		<script id="tumblr">
 			var tumblr = {
 				title: {JSPlaintextTitle},
 				description: {JSPlaintextMetaDescription},
 				rss: {JSPlaintextRSS},
 				portrait_url: {
-					16: {JSPlaintextPortraitURL-16},
-				},
+		      16: {JSPlaintextPortraitURL-16},
+		      24: {JSPlaintextPortraitURL-24},
+		      30: {JSPlaintextPortraitURL-30},
+		      40: {JSPlaintextPortraitURL-40},
+		      48: {JSPlaintextPortraitURL-48},
+		      64: {JSPlaintextPortraitURL-64},
+		      96: {JSPlaintextPortraitURL-96},
+		      128: {JSPlaintextPortraitURL-128},
+ 				},
 
 				{block:Pagination}
 					pages: {
 						{block:PreviousPage}
 							previous: {JSPlaintextPreviousPage},
 						{/block:PreviousPage}
-						current: {CurrentPage}
-						total: {TotalPages}
+						current: {CurrentPage},
+						total: {TotalPages},
 						{block:NextPage}
 							next: {JSPlaintextNextPage},
 						{/block:NextPage}
@@ -90,13 +109,15 @@
 							{block:Caption}
 								caption: {JSPlaintextCaption},
 							{/block:Caption}
-							link_url: {JSPlaintextLinkURL},
+							{block:LinkURL}
+								link_url: {JSPlaintextLinkURL},
+							{/block:LinkURL}
 							url: {
 					      500: {JSPlaintextPhotoURL-500},
 					      400: {JSPlaintextPhotoURL-400},
 					      250: {JSPlaintextPhotoURL-250},
 					      100: {JSPlaintextPhotoURL-100},
-					      75: {JSPlaintextPhotoURL-75},
+					      75: {JSPlaintextPhotoURL-75sq},
 								{block:HighRes}
 									high_res: {JSPlaintextPhotoURL-HighRes},
 								{/block:HighRes}
@@ -172,8 +193,9 @@
 						      400: {JSPlaintextAudioEmbed-400},
 						      500: {JSPlaintextAudioEmbed-500},
 						      640: {JSPlaintextAudioEmbed-640},
-						    }
+						    },
 						  {/block:AudioEmbed}
+						  raw_audio_url: "{RawAudioURL}",
 						  {block:PlayCount}
 						    play_count: {PlayCount},
 						  {/block:PlayCount}
@@ -183,19 +205,19 @@
 						{/block:Audio}
 
 						{block:Video}
-						  play_count: {PlayCount},
-						  formatted_play_count: {JSPlaintextFormattedPlayCount},
-						  play_count_with_label: {JSPlaintextPlayCountWithLabel},
+						  {block:PlayCount}
+							  play_count: {PlayCount},
+							  formatted_play_count: {JSPlaintextFormattedPlayCount},
+							  play_count_with_label: {JSPlaintextPlayCountWithLabel},
+							{/block:PlayCount}
 						  {block:Caption}
 						    caption: {JSPlaintextCaption},
 						  {/block:Caption}
-						  {block:Video}
-						    video: {
-						      500: {JSPlaintextVideo-500},
-						      400: {JSPlaintextVideo-400},
-						      250: {JSPlaintextVideo-250},
-						    }
-						  {/block:Video}
+					    video: {
+					      500: {JSPlaintextVideo-500},
+					      400: {JSPlaintextVideo-400},
+					      250: {JSPlaintextVideo-250},
+					    },
 						{/block:Video}
 
 						{block:Answer}
@@ -262,7 +284,7 @@
 									  tag_url_chrono: {JSPlaintextTagURLChrono},
 									},
 								{/block:Tags}
-							]
+							],
 						{/block:HasTags}
 
 						{block:ContentSource}
@@ -279,22 +301,24 @@
 							}
 						{/block:ContentSource}
 
-						post_author: {
-							name: {JSPlaintextPostAuthorName},
-							title: {JSPlaintextPostAuthorTitle},
-							url: {JSPlaintextPostAuthorURL},
-							portrait_url: {
-								16: {JSPlaintextPostAuthorPortraitURL-16},
-					      24: {JSPlaintextPostAuthorPortraitURL-24},
-					      30: {JSPlaintextPostAuthorPortraitURL-30},
-					      40: {JSPlaintextPostAuthorPortraitURL-40},
-					      48: {JSPlaintextPostAuthorPortraitURL-48},
-					      64: {JSPlaintextPostAuthorPortraitURL-64},
-					      96: {JSPlaintextPostAuthorPortraitURL-96},
-					      128: {JSPlaintextPostAuthorPortraitURL-128},
+						{block:GroupMembers}
+							post_author: {
+								name: {JSPlaintextPostAuthorName},
+								title: {JSPlaintextPostAuthorTitle},
+								url: {JSPlaintextPostAuthorURL},
+								portrait_url: {
+									16: {JSPlaintextPostAuthorPortraitURL-16},
+						      24: {JSPlaintextPostAuthorPortraitURL-24},
+						      30: {JSPlaintextPostAuthorPortraitURL-30},
+						      40: {JSPlaintextPostAuthorPortraitURL-40},
+						      48: {JSPlaintextPostAuthorPortraitURL-48},
+						      64: {JSPlaintextPostAuthorPortraitURL-64},
+						      96: {JSPlaintextPostAuthorPortraitURL-96},
+						      128: {JSPlaintextPostAuthorPortraitURL-128},
+								},
 							},
-						},
-					}
+						{/block:GroupMembers}
+					},
 					{/block:Posts}
 				],
 
@@ -351,26 +375,24 @@
 				{block:Following}
 					following: [
 						{block:Followed}
-						  name: {JSPlaintextFollowedName},
-						  title: {JSPlaintextFollowedTitle},
-						  url: {JSPlaintextFollowedURL},
-					    portrait_url: {
-					      16: {JSPlaintextFollowedPortraitURL-16},
-					      24: {JSPlaintextFollowedPortraitURL-24},
-					      30: {JSPlaintextFollowedPortraitURL-30},
-					      40: {JSPlaintextFollowedPortraitURL-40},
-					      48: {JSPlaintextFollowedPortraitURL-48},
-					      64: {JSPlaintextFollowedPortraitURL-64},
-					      96: {JSPlaintextFollowedPortraitURL-96},
-					      128: {JSPlaintextFollowedPortraitURL-128},
-					    },
+							{
+							  name: {JSPlaintextFollowedName},
+							  title: {JSPlaintextFollowedTitle},
+							  url: {JSPlaintextFollowedURL},
+						    portrait_url: {
+						      16: {JSPlaintextFollowedPortraitURL-16},
+						      24: {JSPlaintextFollowedPortraitURL-24},
+						      30: {JSPlaintextFollowedPortraitURL-30},
+						      40: {JSPlaintextFollowedPortraitURL-40},
+						      48: {JSPlaintextFollowedPortraitURL-48},
+						      64: {JSPlaintextFollowedPortraitURL-64},
+						      96: {JSPlaintextFollowedPortraitURL-96},
+						      128: {JSPlaintextFollowedPortraitURL-128},
+						    },
+						  },
 						{/block:Followed}
 					],
 				{/block:Following}
-
-				{block:Likes}
-					likes: {Likes},
-				{/block:Likes}
 
 				{block:Twitter}
 					twitter: {JSPlaintextTwitterUsername},

@@ -37,6 +37,8 @@ def blockify(block, *args, **kwargs):
 
 sizes = [16,24,30,40,48,64,96,128]
 
+blockify("PortraitURL", PortraitURL=sizes)
+
 blockify("link","URL","name","target",description="description")
 
 blockify("chat", title="title")
